@@ -3,10 +3,10 @@ import React from 'react'
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemButton, ListItemText, Toolbar, Typography } from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 const drawerWidth = 240;
 const navItems = [{ name: 'Inicio', link: "/" }, { name: 'Nosotros', link: "/about" }, { name: 'Contactos', link: "/contacts" }];
-
+const itemsNotShadow = ["/"]
 interface Props {
     /**
      * Injected by the documentation to work in an iframe.
@@ -18,6 +18,7 @@ interface Props {
 function Navbar(props: Props) {
     const { window } = props;
     const router = useRouter()
+    const path = usePathname()
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const handleDrawerToggle = () => {
         setMobileOpen((prevState) => !prevState);
@@ -48,8 +49,8 @@ function Navbar(props: Props) {
 
     const container = window !== undefined ? () => window().document.body : undefined;
     return (
-        <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" sx={{ backgroundColor: "#023146" }}>
+        <Box sx={{ display: 'flex', padding: 0, margin: 0 }}>
+            <AppBar component="nav" sx={{ backgroundColor: "#023146", ...(itemsNotShadow.includes(path) ? { boxShadow: "none" } : {}) }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
