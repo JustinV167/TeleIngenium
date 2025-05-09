@@ -2,11 +2,9 @@
 import { Box, Toolbar, Typography } from '@mui/material'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
 import React from 'react'
 const iconsList = [{ name: "Whatsapp", link: "https://whatsapp.com/channel/0029Vb66w5b0rGiHDXgp8v3u" }, { name: "X", link: "https://x.com/Telegenium?t=s9WQYL2YmtzgtUfYKX9zMA&s=08" }, { name: "Instagram", link: "https://www.instagram.com/telegenium?utm_source=qr&igsh=OHczbGdhcTJtZ21y" }, { name: "Facebook", link: "https://www.facebook.com/profile.php?id=61575734597004" }]
 export default function App() {
-    const router = useRouter()
     return (
         <Box sx={{ width: "100vw", height: "100vh", display: "flex", flexDirection: "column", }}>
             <Toolbar sx={{ height: { xs: 24, sm: 64, }, width: "100%", }} ></Toolbar>
