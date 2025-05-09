@@ -17,6 +17,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  title: "TeleIngenium"
 };
 
 export default function RootLayout({

@@ -6,12 +6,8 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 const drawerWidth = 240;
 const navItems = [{ name: 'Inicio', link: "/" }, { name: 'Nosotros', link: "/about" }, { name: 'Contactos', link: "/contacts" }];
-const itemsNotShadow = ["/"]
+const itemsNotShadow = ["/", "/contacts"]
 interface Props {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
     children: React.ReactNode;
     window?: () => Window;
 }
